@@ -51,7 +51,7 @@ class Map extends Component {
 
     render() {
         return (
-            <div id="map" style={{width: "100%", height: "400px", background: "grey"}} ref={this.binding}></div>
+            <div id="map" ref={this.binding}></div>
         )
     }
 }
