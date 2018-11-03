@@ -34,7 +34,7 @@ class Map extends Component {
         var behavior = new window.H.mapevents.Behavior(new window.H.mapevents.MapEvents(this.map));
         
         // Create the default UI components
-        var ui = window.H.ui.UI.createDefault(this.map, defaultLayers);
+        // var ui = window.H.ui.UI.createDefault(this.map, defaultLayers);
         
         // Now use the map as required...
         this.moveMapToSoda(this.map);
@@ -49,9 +49,10 @@ class Map extends Component {
         map.setZoom(14);
     }
 
-    createMarker(lat, lng)  {
-        if (this.map != null) {
-            return <ItemMarker map={this.map} lat={lat} lng={lng} />
+    createMarker(_lat, _lng)  {
+        if (this.state.mapCreated) {
+            console.log('created marker' + _lat + ' ' + _lng);
+            return <ItemMarker map={this.map} lat={_lat} lng={_lng} />
         }
     }
 
@@ -59,6 +60,7 @@ class Map extends Component {
         return (
             <div id="map" ref={this.binding}>
                 {this.createMarker(37.8756, -122.2588)}
+                {this.createMarker(37.8756, -122.2598)}
             </div>
         )
     }
