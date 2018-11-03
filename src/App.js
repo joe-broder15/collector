@@ -23,13 +23,8 @@ class App extends Component {
 
     render() {
         return (
-<<<<<<< HEAD
-            <div>
-                {/* <div className="browser"></div> */}
-=======
             <div id="mapDivider">
                 <Overlay mode={this.state.mode} changeMode={this.changeMode} />
->>>>>>> e2590e6a5c524a5a3ab4be7eaa181f9195708f39
                 <Map />
             </div>
         )

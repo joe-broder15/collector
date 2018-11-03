@@ -3,7 +3,6 @@
     height:99vh;
 }
 
-<<<<<<< HEAD
 .itemMarker {
     width: 20px;
     height: 20px;
@@ -19,7 +18,6 @@
     margin-top: -100px;
     margin-left: -50px;
 }
-=======
 #overlayPanel{
     width: 30%;
     padding: 20px;
@@ -52,4 +50,3 @@
 #searchbar button{
     width: 20%;
 }
->>>>>>> e2590e6a5c524a5a3ab4be7eaa181f9195708f39
