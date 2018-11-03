@@ -3,6 +3,7 @@
     height:99vh;
 }
 
+<<<<<<< HEAD
 .itemMarker {
     width: 20px;
     height: 20px;
@@ -17,4 +18,38 @@
     background-color: red;
     margin-top: -100px;
     margin-left: -50px;
+}}
+=======
+#overlayPanel{
+    width: 30%;
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-content: center;
 }
+
+#overlayPanel input{
+    width: 100%;
+}
+
+#mapDivider{
+    display: flex;
+    flex-direction: row;
+}
+
+#searchbar{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+}
+
+#searchbar input{
+    width: 80%;
+}
+
+#searchbar button{
+    width: 20%;
+}
+>>>>>>> e2590e6a5c524a5a3ab4be7eaa181f9195708f39
