@@ -1,4 +1,37 @@
 #map {
     width: 100%;
-    height:100vh;
+    height:99vh;
+}
+
+#overlayPanel{
+    width: 30%;
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+#overlayPanel input{
+    width: 100%;
+}
+
+#mapDivider{
+    display: flex;
+    flex-direction: row;
+}
+
+#searchbar{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+}
+
+#searchbar input{
+    width: 80%;
+}
+
+#searchbar button{
+    width: 20%;
 }
