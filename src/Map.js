@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import ItemMarker from "./ItemMarker"
 
 class Map extends Component {
 
@@ -25,7 +26,7 @@ class Map extends Component {
         });
         
         //Step 2: initialize a map  - not specificing a location will give a whole world view.
-        this.map = new window.H.Map(this.binding.current, defaultLayers.normal.map, {pixelRatio: pixelRatio});
+        this.map = new window.H.Map(this.binding.current, defaultLayers.normal.map, {pixelRatio: pixelRatio})
         
         //Step 3: make the map interactive
         // MapEvents enables the event system
@@ -36,22 +37,29 @@ class Map extends Component {
         var ui = window.H.ui.UI.createDefault(this.map, defaultLayers);
         
         // Now use the map as required...
-        this.moveMapToBerlin(this.map);
+        this.moveMapToSoda(this.map);
 
         this.setState({
             mapCreated: true
         })
-
     }
 
-    moveMapToBerlin(map) {
-        map.setCenter({lat:52.5159, lng:13.3777});
+    moveMapToSoda(map) {
+        map.setCenter({lat:37.8756, lng:-122.2588});
         map.setZoom(14);
+    }
+
+    createMarker(lat, lng)  {
+        if (this.map != null) {
+            return <ItemMarker map={this.map} lat={lat} lng={lng} />
+        }
     }
 
     render() {
         return (
-            <div id="map" ref={this.binding}></div>
+            <div id="map" ref={this.binding}>
+                {this.createMarker(37.8756, -122.2588)}
+            </div>
         )
     }
 }
