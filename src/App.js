@@ -36,13 +36,8 @@ class App extends Component {
     render() {
         return (
             <div id="mapDivider">
-<<<<<<< HEAD
                 <Overlay mode={this.state.mode} changeMode={this.changeMode} />
                 <Map caches={this.state.caches}/>
-=======
-                {<Overlay mode={this.state.mode} changeMode={this.changeMode} />}
-                <Map />
->>>>>>> 5fdf1dae0d1a89a78a096dafab2718a1a1b21c4d
             </div>
         )
     }
