@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import './style.css'
+import pinImage from './pin.png'
 
 class ItemMarker extends Component {
 
@@ -14,14 +15,18 @@ class ItemMarker extends Component {
     componentDidMount()
     {
         var pointer = document.createElement('div')
-        pointer.className = 'itemMarker'
+        pointer.className = 'pointer'
+
+        var pin = document.createElement('img')
+        pin.src = pinImage
+        pin.className = 'pin'
         var popup = document.createElement('div')
         popup.className = 'infoPopup'
         popup.style.display = 'none'
 
         pointer.appendChild(popup)
+        pointer.appendChild(pin)
 
-        //create dom icon and add/remove opacity listeners
         var domIcon = new window.H.map.DomIcon(pointer, {
             // the function is called every time marker enters the viewport
             onAttach: (clonedElement, domIcon, domMarker) => {
@@ -45,11 +50,8 @@ class ItemMarker extends Component {
     showInfo(popup) {
         popup.style.display = 'block'
         
-        
         // CREATE THE THINGS HERE
         popup.innerHTML = 'HI'
-
-
 
         this.setState({showsInfo: true})
     }
