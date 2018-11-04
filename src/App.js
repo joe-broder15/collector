@@ -33,6 +33,9 @@ class App extends Component {
     }
 
     delete(data) {
+        this.setState((state) => ({
+            caches: state.caches.filter((x) => !(x.name === data.name && x.longitude === data.longitude && x.latitude === data.latitude))}));
+
         deleteItem(data).then(() =>
         displayItemsOnLoad().then(items => this.updateCaches(items)))
     }

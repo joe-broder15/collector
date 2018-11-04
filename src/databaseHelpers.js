@@ -32,11 +32,7 @@ function deleteItem(data) {
     return client.auth.loginWithCredential(new window.stitch.AnonymousCredential()).then(
         () => db.collection('caches')
         .deleteMany({ 
-            user_id: { $eq: data.user_id},
             name: { $eq: data.name}, 
-            description: { $eq: data.description},
-            longitude: { $eq: data.longitude},
-            latitude: { $eq: data.latitude}
         }));
 }
 

@@ -44,6 +44,7 @@ class Overlay extends Component {
         if (this.props.mode == "view"){
             return (
                 <div id="overlayPanel">
+                    <h1>Collector</h1>
                     <div id="searchbar">
                         <input></input> 
                         <button>Search</button>
@@ -55,6 +56,7 @@ class Overlay extends Component {
         } else if (this.props.mode == "create"){
             return (
                 <div id="overlayPanel">
+                    <h1>Collector</h1>
                     Name:
                     <input value={this.state.name} onChange={this.handleName}></input>
                     Description:
