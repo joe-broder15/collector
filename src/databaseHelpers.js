@@ -16,7 +16,7 @@ function displayItemsOnLoad() {
     .catch(console.error);
 }
 
-function addItem(cacheName, desc, long, lat) {
+function addItem(cacheName, desc, lat, long) {
   client.auth.loginWithCredential(new window.stitch.AnonymousCredential()).then(
     () => db.collection('caches')
     .insertOne({

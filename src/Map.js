@@ -49,10 +49,10 @@ class Map extends Component {
         map.setZoom(14);
     }
 
-    createMarker(_lat, _lng)  {
+    createMarker(itemData)  {
         if (this.state.mapCreated) {
-            console.log('created marker' + _lat + ' ' + _lng);
-            return <ItemMarker map={this.map} lat={_lat} lng={_lng} />
+            console.log('created marker' + itemData.latitude + ' ' + itemData.longitude);
+            return <ItemMarker map={this.map} data={itemData} />
         }
     }
 
@@ -63,7 +63,7 @@ class Map extends Component {
                 {this.createMarker(37.8756, -122.2598)} */}
 
                 {
-                    this.props.caches.map(x => this.createMarker(x.longitude, x.latitude))
+                    this.props.caches.map(x => this.createMarker(x))
                 }
             </div>
         )

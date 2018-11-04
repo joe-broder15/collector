@@ -41,8 +41,9 @@ class ItemMarker extends Component {
         });
 
         this.marker = new window.H.map.DomMarker(
-            {lat: this.props.lat, lng: this.props.lng}, 
-            {icon: domIcon});
+            {lat: this.props.data.latitude, lng: this.props.data.longitude}, 
+            {icon: domIcon}
+        );
             
         this.props.map.addObject(this.marker);
     }
@@ -51,7 +52,7 @@ class ItemMarker extends Component {
         popup.style.display = 'block'
         
         // CREATE THE THINGS HERE
-        popup.innerHTML = 'HI'
+        popup.innerHTML = '<p>' + this.props.data.name + '</p><p>' + this.props.data.description + '</p>'
 
         this.setState({showsInfo: true})
     }
