@@ -25,8 +25,8 @@ class App extends Component {
 
     }
 
-    changeMode(){
-        if(this.state.mode == "view"){
+    changeMode() {
+        if (this.state.mode == "view") {
             this.setState({mode: "create"});
         } else {
             this.setState({mode: "view"});
@@ -36,6 +36,7 @@ class App extends Component {
     render() {
         return (
             <div id="mapDivider">
+<<<<<<< HEAD
                 <Overlay mode={this.state.mode} changeMode={this.changeMode} />
                 <Map caches={this.state.caches}/>
             </div>

@@ -3,20 +3,32 @@
     height:99vh;
 }
 
-.itemMarker {
-    width: 20px;
-    height: 20px;
-    background-color: red;
-    margin-top: -10px;
-    margin-left: -10px;
+.pin {
+    /* border: 1px solid black; */
+    width: 40px;
+    height: 40px;
+    margin-bottom: -40px;
+    z-index: 15;
+    position: absolute;
+    bottom: 40px;
+}
+
+.pointer {
+    /* border: 1px solid purple; */
+    position: absolute
 }
 
 .infoPopup {
-    width: 100px;
-    height: 100px;
-    background-color: red;
-    margin-top: -100px;
-    margin-left: -50px;
+    /* border: 1px solid cyan; */
+    width: 220px;
+    height: 180px;
+    background-color: #fcf6e8;
+    position: absolute;
+    margin-top: -200px;
+    padding: 10px;
+    z-index: 10;
+    border-radius: 10px;
+    /* margin-left: -50px; */
 }
 #overlayPanel{
     width: 30%;
