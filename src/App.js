@@ -3,6 +3,8 @@ import Map from './Map'
 import './style.css'
 import './Overlay'
 import Overlay from "./Overlay";
+import {displayItemsOnLoad, addItem} from './databaseHelpers'
+
 
 class App extends Component {
 
@@ -10,8 +12,18 @@ class App extends Component {
         super(props)
         this.state = {mode: "view", caches: []}
         this.changeMode = this.changeMode.bind(this);
+        
+        this.updateCaches = this.updateCaches.bind(this)
+        displayItemsOnLoad().then(items => this.updateCaches(items))
     }
     
+    updateCaches(items) {
+
+        this.setState({
+            caches: items
+        })
+
+    }
 
     changeMode(){
         if(this.state.mode == "view"){
@@ -25,7 +37,7 @@ class App extends Component {
         return (
             <div id="mapDivider">
                 <Overlay mode={this.state.mode} changeMode={this.changeMode} />
-                <Map />
+                <Map caches={this.state.caches}/>
             </div>
         )
     }

@@ -21,7 +21,6 @@ class ItemMarker extends Component {
 
         pointer.appendChild(popup)
 
-        //create dom icon and add/remove opacity listeners
         var domIcon = new window.H.map.DomIcon(pointer, {
             // the function is called every time marker enters the viewport
             onAttach: (clonedElement, domIcon, domMarker) => {

@@ -59,8 +59,12 @@ class Map extends Component {
     render() {
         return (
             <div id="map" ref={this.binding}>
-                {this.createMarker(37.8756, -122.2588)}
-                {this.createMarker(37.8756, -122.2598)}
+                {/* {this.createMarker(37.8756, -122.2588)}
+                {this.createMarker(37.8756, -122.2598)} */}
+
+                {
+                    this.props.caches.map(x => this.createMarker(x.longitude, x.latitude))
+                }
             </div>
         )
     }

@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import App from "./App";
+import { addItem } from "./databaseHelpers";
 
 class Overlay extends Component {
 
@@ -16,6 +17,7 @@ class Overlay extends Component {
                         <button>Search</button>
                     </div>
                     <button onClick={this.props.changeMode}>Add Cache</button>
+                    <button onClick={() => addItem("test-cache", "example", 37.8756, -122.2588)}>testItem</button>
                 </div>
             )
         } else if (this.props.mode == "create"){
@@ -25,7 +27,7 @@ class Overlay extends Component {
                     <input></input>
                     Description:
                     <input></input>
-                    <button>Add Cache</button>
+                    <button>New Cache</button>
                     <button onClick={this.props.changeMode}>Back</button>
                 </div>
             )

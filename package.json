@@ -3,9 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "mongodb-stitch-browser-sdk": "^4.0.14-5",
+    "mongodb-stitch-server-sdk": "^4.0.14-5",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
-    "react-scripts": "2.0.4"
+    "react-scripts": "2.0.4",
+    "stitch": "^0.3.3"
   },
   "scripts": {
     "start": "react-scripts start",
