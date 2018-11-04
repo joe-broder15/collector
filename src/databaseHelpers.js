@@ -17,18 +17,30 @@ function displayItemsOnLoad() {
 }
 
 function addItem(cacheName, desc, lat, long) {
-  client.auth.loginWithCredential(new window.stitch.AnonymousCredential()).then(
-    () => db.collection('caches')
-    .insertOne({
-      user_id: client.auth.user.id,
-      name: cacheName, 
-      description: desc,
-      longitude: long,
-      latitude: lat
-    }));
+    return client.auth.loginWithCredential(new window.stitch.AnonymousCredential()).then(
+        () => db.collection('caches')
+        .insertOne({
+            user_id: client.auth.user.id,
+            name: cacheName, 
+            description: desc,
+            longitude: long,
+            latitude: lat
+        }));
 }
 
-export {displayItemsOnLoad, addItem}
+function deleteItem(data) {
+    return client.auth.loginWithCredential(new window.stitch.AnonymousCredential()).then(
+        () => db.collection('caches')
+        .deleteMany({ 
+            user_id: { $eq: data.user_id},
+            name: { $eq: data.name}, 
+            description: { $eq: data.description},
+            longitude: { $eq: data.longitude},
+            latitude: { $eq: data.latitude}
+        }));
+}
+
+export {displayItemsOnLoad, addItem, deleteItem}
 //default { displayItemsOnLoad, addItem } 
 // export default returnItems
 // export default addItem

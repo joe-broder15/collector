@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import ItemMarker from "./ItemMarker"
+import NewPin from "./NewPin";
 
 class Map extends Component {
 
@@ -38,6 +39,8 @@ class Map extends Component {
         
         // Now use the map as required...
         this.moveMapToSoda(this.map);
+        
+        this.props.setMap(this.map);
 
         this.setState({
             mapCreated: true
@@ -52,21 +55,24 @@ class Map extends Component {
     createMarker(itemData)  {
         if (this.state.mapCreated) {
             console.log('created marker' + itemData.latitude + ' ' + itemData.longitude);
-            return <ItemMarker map={this.map} data={itemData} />
+            return <ItemMarker map={this.map} data={itemData} add={this.props.add} delete={this.props.delete}/>
         }
     }
 
     render() {
-        return (
-            <div id="map" ref={this.binding}>
-                {/* {this.createMarker(37.8756, -122.2588)}
-                {this.createMarker(37.8756, -122.2598)} */}
-
-                {
-                    this.props.caches.map(x => this.createMarker(x))
-                }
-            </div>
-        )
+        if (this.props.mode == 'view') {
+            return (
+                <div id="map" ref={this.binding}>
+                    { this.props.caches.map(x => this.createMarker(x))}
+                </div>
+            )
+        } else {
+            return (
+                <div id="map" ref={this.binding}>
+                    <NewPin />
+                </div>
+            )
+        }
     }
 }
 

@@ -10,6 +10,7 @@ class ItemMarker extends Component {
 
         this.showInfo = this.showInfo.bind(this)
         this.hideInfo = this.hideInfo.bind(this)
+        this.delete = this.delete.bind(this)
     }
 
     componentDidMount()
@@ -52,9 +53,18 @@ class ItemMarker extends Component {
         popup.style.display = 'block'
         
         // CREATE THE THINGS HERE
-        popup.innerHTML = '<p>' + this.props.data.name + '</p><p>' + this.props.data.description + '</p>'
+        popup.innerHTML = '<p>' + this.props.data.name + '</p><p>' + this.props.data.description + '</p>' 
+        
+        var deleteButton = document.createElement('button')
+        deleteButton.onclick = this.delete
+        deleteButton.innerHTML = 'Delete'
+        popup.appendChild(deleteButton)
 
         this.setState({showsInfo: true})
+    }
+
+    delete() {
+        this.props.delete(this.props.data)
     }
 
     hideInfo(popup) {

@@ -62,3 +62,17 @@
 #searchbar button{
     width: 20%;
 }
+
+#newPin {
+    position: absolute;
+    margin-left: -40px;
+    left: 65%;
+    top: 50%;
+}
+
+#newPinText {
+    margin-top: -80px;
+    margin-left: -20px;
+    font-size: 24px;
+    color: #D10013;
+}
